@@ -9,7 +9,7 @@
 - [x] Linter
 - [x] Less
 - [x] Axios
-- [x] postcss-px2rem rem适配
+- [x] postcss-px-to-viewport 移动端 vw 适配
 - [x] ✨webpack-bundle-analyzer 文件结构可视化，找出导致体积过大的原因
 - [x] ✨DllPlugin  业务代码和第三方库区分打包
 - [x] ✨UglifyJsPlugin 删除冗余代码

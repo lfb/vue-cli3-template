@@ -83,20 +83,7 @@ module.exports = {
     // 开启 CSS source maps
     sourceMap: !!isProduction,
     // css预设器配置项
-    loaderOptions: {
-      postcss: {
-        // 这是rem适配的配置
-        plugins: [
-          require('postcss-px2rem')({
-            remUnit: 75
-          })
-        ]
-      },
-      less: {
-        // 全局引入，多文件以分号隔开
-        data: '"@import "~@/assets/css/common.less";'
-      }
-    }
+    loaderOptions: {}
   },
   // 打包时不生成.map文件
   productionSourceMap: false

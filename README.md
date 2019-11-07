@@ -14,6 +14,7 @@
 - [x] ✨DllPlugin  业务代码和第三方库区分打包
 - [x] ✨UglifyJsPlugin 删除冗余代码
 - [x] ✨compression-webpack-plugin 开启 Gizp 压缩
+- [x] ...
 
 ## 初始化项目
 ```
@@ -33,11 +34,15 @@ yarn run build
 npm run build --report
 ```
 
-
 ### 检测 Lints
 ```
 yarn run lint
 ```
 
+### 单元测试
+```
+yarn run test:unit
+```
+
 ### MIT
-@梁凤波
+[@梁凤波](https://github.com/liangfengbo/vue-cli3-template)

@@ -9,31 +9,31 @@
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex'
-import VLoading from './components/Loading'
+  import { mapActions, mapGetters } from 'vuex'
+  import VLoading from './components/Loading'
 
-export default {
-  components: {
-    VLoading
-  },
-  computed: {
-    ...mapGetters('loading', [
-      'isLoading',
-      'loadingText'
-    ])
-  },
-  created () {
-    this.getArticle()
-  },
-  methods: {
-    ...mapActions({
-      getArticleList: 'articles/getArticleList'
-    }),
-    async getArticle () {
-      await this.getArticleList()
+  export default {
+    components: {
+      VLoading
+    },
+    computed: {
+      ...mapGetters('loading', [
+        'isLoading',
+        'loadingText'
+      ])
+    },
+    created () {
+      this.getArticle()
+    },
+    methods: {
+      ...mapActions({
+        getArticleList: 'articles/getArticleList'
+      }),
+      async getArticle () {
+        await this.getArticleList()
+      }
     }
   }
-}
 </script>
 <style lang="less">
   #app {

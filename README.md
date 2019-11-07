@@ -1,7 +1,7 @@
 # vue-cli3-template
 基于 Vue-cli3 搭建的前端开发项目模板，已在 vue.config.js 文件中配置好 webpack，仅供参考，开箱即用，欢迎大家围观指教！
 
-## Webpack
+## Features
 - [x] Babel
 - [x] Router
 - [x] Vuex

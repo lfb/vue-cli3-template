@@ -70,11 +70,8 @@ module.exports = {
           outputPath: './vendor'
         })
       )
-      if (process.env.npm_config_report) {
-        // 打包后模块大小分析
-        // npm run build --report
-        config.plugins.push(new BundleAnalyzerPlugin())
-      }
+      // 打包后模块大小分析
+      config.plugins.push(new BundleAnalyzerPlugin())
     }
   },
   css: {

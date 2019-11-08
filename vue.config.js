@@ -4,7 +4,14 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const HappyPack = require('happypack')
+const os = require('os')
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
 const isProduction = process.env.NODE_ENV === 'production'
+
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
 
 module.exports = {
   publicPath: process.env.PUBLIC_PATH,
@@ -72,6 +79,15 @@ module.exports = {
       )
       // 打包后模块大小分析
       config.plugins.push(new BundleAnalyzerPlugin())
+
+      // happyBabel
+      config.plugins.push(new HappyPack({
+        // 这个HappyPack的“名字”就叫做happyBabel，和楼上的查询参数遥相呼应
+        id: 'happyBabel',
+        // 指定进程池
+        threadPool: happyThreadPool,
+        loaders: ['babel-loader?cacheDirectory']
+      }))
     }
   },
   css: {
@@ -81,6 +97,29 @@ module.exports = {
     sourceMap: !!isProduction,
     // css预设器配置项
     loaderOptions: {}
+  },
+  // 链式操作  https://github.com/neutrinojs/webpack-chain
+  chainWebpack: config => {
+    config.module
+      .rule('compile')
+      .test(/\.js$/)
+      .include
+      .add(resolve('src'))
+      .add(resolve('tests'))
+      .end()
+      .exclude
+      .add(/node_modules/)
+      .add(/bower_components/)
+      .add(/dist/)
+      .end()
+      .use('babel')
+      .loader('happypack-loader?id=happyBabel')
+      .loader('babel-loader?cacheDirectory=true')
+      .options({
+        presets: [
+          ['@babel/preset-env', { modules: false }]
+        ]
+      })
   },
   // 打包时不生成.map文件
   productionSourceMap: false

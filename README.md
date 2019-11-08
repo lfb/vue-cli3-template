@@ -34,7 +34,7 @@ $ yarn install
 $ yarn serve
 
 # 依赖包 Dll 打包
-yarnr run dll
+$ yarnr run dll
 
 # 项目构建打包
 $ yarn run build
@@ -43,10 +43,10 @@ $ yarn run build
 $ yarn run build --report
 
 # Eslint检测
-yarn run lint
+$ yarn run lint
 
 # 单元测试
-yarn run test:unit
+$ yarn run test:unit
 ```
 
 ## FAQ

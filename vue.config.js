@@ -122,5 +122,13 @@ module.exports = {
       })
   },
   // 打包时不生成.map文件
-  productionSourceMap: false
+  productionSourceMap: false,
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        resolve('src/assets/css/common.less')
+      ]
+    }
+  }
 }

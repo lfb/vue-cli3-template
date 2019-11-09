@@ -12,7 +12,7 @@
 - [x] CSS 预编译工具：Less
 - [x] HTTP 库：Axios
 - [x] 代码规范：Linter
-- [x] 移动端 vw 适配：postcss-px-to-viewport
+- [x] rem 适配：postcss-plugin-px2rem
 - [x] 优化 babel-loader，开启 cacheDirectory
 - [x] 使用 Happypack将 loader 由单进程转为多进程，加快编译速度
 - [x] 文件结构可视化：webpack-bundle-analyzer

@@ -1,4 +1,4 @@
-import articles from '@/api/articles'
+import articles from '@api/articles'
 
 const state = {}
 

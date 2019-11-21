@@ -13,10 +13,6 @@ const mutations = {
   // 递归删除loading
   SHIFT_LOADING (states) {
     states.loadingList.shift()
-  },
-  // 控制是否需要loading
-  SHOULD_LOADING (states, isShould) {
-    states.isLoading = isShould
   }
 }
 const getters = {
@@ -30,19 +26,19 @@ const getters = {
 const actions = {
   /**
    * 开启loading
-   * @param states
+   * @param state
    * @param playload
    */
-  openLoading (states, playload) {
-    states.commit('PUSH_LOADING', playload)
+  openLoading (state, playload) {
+    state.commit('PUSH_LOADING', playload)
   },
 
   /**
    * 关闭loading
-   * @param contaxt
+   * @param state
    */
-  closeLoading (states) {
-    states.commit('SHIFT_LOADING')
+  closeLoading (state) {
+    state.commit('SHIFT_LOADING')
   }
 }
 export default {

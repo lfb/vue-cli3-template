@@ -10,7 +10,7 @@
 </template>
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import VLoading from './components/Loading'
+  import VLoading from '@components/Loading'
 
   export default {
     components: {

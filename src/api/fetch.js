@@ -15,7 +15,7 @@ utils.ajax.interceptors.request.use((config) => {
   }
 
   // 获取token
-  config.headers.common.Authorization = `Bearer ${Vue.ls.get('WATCH_CHECK_TOKEN')}`
+  config.headers.common.Authorization = `Bearer ${Vue.ls.get('token')}`
   return config
 }, error => Promise.reject(error))
 
@@ -23,7 +23,7 @@ utils.ajax.interceptors.response.use((response) => {
   // 如果后端有新的token则重新缓存
   const newToken = response.headers['new-token']
   if (newToken) {
-    Vue.ls.set('WATCH_CHECK_TOKEN', newToken)
+    Vue.ls.set('token', newToken)
   }
   // 关闭loading
   closeLoading()
@@ -45,8 +45,7 @@ utils.ajax.interceptors.response.use((response) => {
   if (extraErrors.indexOf(code) === -1) {
     switch (code) {
       case 401:
-        Vue.ls.set('WATCH_CHECK_TOKEN', null)
-        window.location.href = `${process.env.VUE_APP_BASE_API}/wechat-server/code?target_url=${encodeURIComponent(document.URL)}`
+        Vue.ls.set('token', null)
         break
 
       case 404:

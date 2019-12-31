@@ -9,8 +9,8 @@ const actions = {
    * 获取文章列表
    */
   async getArticleList ({ state, commit }, params) {
-    const res = await articles.list(params)
-    return res
+    const r = await articles.list(params)
+    return r
   }
 }
 

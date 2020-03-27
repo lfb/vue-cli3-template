@@ -11,15 +11,14 @@
 - [x] Vuex
 - [x] CSS 预编译工具：Less
 - [x] HTTP 库：Axios
-- [x] 代码规范：Linter
+- [x] 代码规范：eslint airbnb 规范
 - [x] 业务代码和第三方库区分打包：DllPlugin  
 - [x] 删除冗余代码：UglifyJsPlugin 
 - [x] 开启 Gizp 压缩：compression-webpack-plugin 
 - [x] 配置引入公共样式文件
 - [x] 使用 alias 简化路径
-- [x] rem 适配：postcss-plugin-px2rem
+- [x] vw 移动端适配
 - [x] 文件结构可视化：webpack-bundle-analyzer
-- [x] 单元测试
 
 ## 安装及快速开始
 ```
@@ -35,8 +34,11 @@ $ yarn install
 # 启动项目
 $ yarn serve
 
-# 依赖包 Dll 打包
-$ yarnr run dll
+# eslint 检测
+$ yarn lint
+
+# 切记：打包前请允许一次 eslint 修复
+$ yarnr lint --fix
 
 # 项目构建打包
 $ yarn run build
@@ -44,11 +46,8 @@ $ yarn run build
 # 项目构建打包分析
 $ yarn run build --report
 
-# Eslint检测
-$ yarn run lint
-
-# 单元测试
-$ yarn run test:unit
+# 现代模式打包
+$ yarn build --modren
 ```
 
 ## FAQ

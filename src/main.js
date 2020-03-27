@@ -1,20 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import Storage from 'vue-ls'
-import 'lib-flexible/flexible'
+import Vue from 'vue';
+import Storage from 'vue-ls';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(Storage, {
-  namespace: 'boblog__',
+  namespace: 'project_name_storage__',
   name: 'ls',
-  storage: 'local'
-})
+  storage: 'local',
+});
 
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount('#app');

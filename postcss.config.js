@@ -1,8 +1,18 @@
 module.exports = {
   plugins: {
-    'postcss-plugin-px2rem': {
-      rootValue: 75,
-      exclude: /(view-design)/
-    }
-  }
-}
+    'postcss-px-to-viewport': {
+      unitToConvert: 'px',
+      viewportWidth: 750,
+      viewportHeight: 1334,
+      unitPrecision: 3,
+      propList: ['*'],
+      viewportUnit: 'vw',
+      fontViewportUnit: 'vw',
+      selectorBlackList: ['icon, app'],
+      minPixelValue: 1,
+      mediaQuery: false,
+      replace: true,
+      exclude: /(vant)/,
+    },
+  },
+};

@@ -1,24 +1,15 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'index',
+    component: () => import(/* webpackChunkName: "home" */ '../views/index.vue'),
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
@@ -26,7 +17,7 @@ const router = new VueRouter({
   // 默认路由模式是 hash 模式，会携带 # 标记，与真实 url 不符，可以改为 history 模式
   base: process.env.BASE_URL,
   // 页面组件没有进行按需加载，可以使用 require.ensure() 来进行优化
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

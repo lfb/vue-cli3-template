@@ -24,7 +24,7 @@
 ## 安装及快速开始
 ```
 # 克隆项目
-$ git clone https://github.com/liangfengbo/vue-cli3-template
+$ git clone -b vant https://github.com/liangfengbo/vue-cli3-template
 
 # 进入目录
 $ cd vue-cli3-template

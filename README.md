@@ -6,6 +6,7 @@
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/liangfengbo/vue-cli3-template/blob/master/LICENSE)
 
 ## 特征
+- [x] 有赞轻量、可靠的移动端 Vue 组件库
 - [x] Babel
 - [x] VueRouter
 - [x] Vuex

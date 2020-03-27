@@ -1,21 +1,24 @@
 <template>
-  <div class="home">
-    Hello Vue.js
+  <div>
+    <h1 class="title">Hello Vue.js</h1>
+    <van-button type="info">您好</van-button>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+import { Button } from 'vant';
+
+Vue.use(Button);
 export default {
-  name: 'home',
+  name: 'index',
   data() {
     return {};
   },
 };
 </script>
 <style lang="less" scoped>
-  .home {
-    margin: 32px;
-    font-size: 30px;
-    font-weight: bold;
+  .title {
+    margin: 64px;
   }
 </style>

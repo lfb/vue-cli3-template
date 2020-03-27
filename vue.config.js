@@ -52,13 +52,13 @@ module.exports = {
           '@vue/cli-plugin-babel/preset',
         ],
         // 可以再这里按需引入组件库，如 vant 组件
-        // plugins: [
-        //   ['import', {
-        //     libraryName: 'vant',
-        //     libraryDirectory: 'es',
-        //     style: true
-        //   }, 'vant']
-        // ]
+        plugins: [
+          ['import', {
+            libraryName: 'vant',
+            libraryDirectory: 'es',
+            style: true
+          }, 'vant']
+        ]
       });
     config.optimization.splitChunks({
       chunks: 'all',

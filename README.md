@@ -37,7 +37,7 @@ $ yarn serve
 # eslint 检测
 $ yarn lint
 
-# 切记：打包前请允许一次 eslint 修复
+# eslint 修复
 $ yarnr lint --fix
 
 # 项目构建打包
